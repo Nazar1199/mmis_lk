@@ -69,14 +69,4 @@
         app:layout_constraintStart_toStartOf="@+id/textViewPassword"
         app:layout_constraintTop_toBottomOf="@+id/textViewPassword" />
 
-    <Switch
-        android:id="@+id/switchLocal"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Local"
-        app:layout_constraintBottom_toBottomOf="@+id/buttonLogin"
-        app:layout_constraintStart_toStartOf="@+id/editTextTextPassword"
-        app:layout_constraintTop_toTopOf="@+id/buttonLogin"
-        tools:checked="true" />
-
 </androidx.constraintlayout.widget.ConstraintLayout>

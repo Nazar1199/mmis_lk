@@ -1,27 +1,24 @@
 package com.example.mmis_lk
 
-import User
+import UserLogin
+import android.annotation.SuppressLint
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
-import android.widget.Switch
 import android.widget.TextView
 import android.widget.Toast
 import com.example.mmis_lk.retrofit.RetrofitClient
-import com.example.mmis_lk.retrofit.interfaces.DeltaApi
-import com.example.mmis_lk.retrofit.interfaces.UserApi
+import com.example.mmis_lk.retrofit.interfaces.mmis_api
 import kotlinx.coroutines.*
-import kotlin.coroutines.CoroutineContext
 
 class MainActivity : AppCompatActivity() {
+    @SuppressLint("SuspiciousIndentation")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        val localBaseUrl = "http://192.168.0.11:2000/api/"
-        val baseUrl = "https://dummyjson.com/"
+        val localBaseUrl = "http://192.168.0.13:2000/api/"
 
-        var localeSwitch = findViewById<Switch>(R.id.switchLocal)
         var loginEmail = findViewById<EditText>(R.id.editTextTextEmail)
         var loginPassword = findViewById<EditText>(R.id.editTextTextPassword)
         var messagesView = findViewById<TextView>(R.id.textViewMessage)
@@ -30,47 +27,24 @@ class MainActivity : AppCompatActivity() {
 //            Toast.makeText(this, "Тостик для Дафки v.2", Toast.LENGTH_SHORT).show()
             val email = loginEmail.text.toString()
             val password = loginPassword.text.toString()
-
-            if (localeSwitch.isChecked){
-              Toast.makeText(this, localBaseUrl, Toast.LENGTH_SHORT).show()
-                val deltaClient = RetrofitClient.getClient(localBaseUrl)
-                var deltaApi = deltaClient.create(DeltaApi::class.java)
+                val client = RetrofitClient.getClient(localBaseUrl)
+                var api = client.create(mmis_api::class.java)
                 CoroutineScope(Dispatchers.IO).launch {
                     try {
-                        val deltaUser = deltaApi.getUser2()
+                        var log = UserLogin(email, password)
+                        val profile = api.login(log)
                         runOnUiThread {
-                            messagesView.text = deltaUser.toString()
-                        }
-                    } catch (error: Exception){
-                        runOnUiThread {
-                            messagesView.text = "ERROR LOCAL"
-                        }
-                    }
-                }
-            } else {
-                Toast.makeText(this, baseUrl, Toast.LENGTH_SHORT).show()
-                val client = RetrofitClient.getClient(baseUrl)
-                var userApi = client.create(UserApi::class.java)
-                CoroutineScope(Dispatchers.IO).launch {
-                    try {
-                        val login = userApi.login(email, password)
-                        runOnUiThread {
-                            messagesView.text = login.toString()
-                        }
-                        runOnUiThread {
-                            if (login.token != ""){
-                                messagesView.text = login.token
-                            } else {
-                                messagesView.text = "Failed login"
+                            if (profile.id != null){
+                                messagesView.text = "Вход успешный!"
                             }
+//                            messagesView.text = profile.toString()
                         }
                     } catch (error: Exception){
                         runOnUiThread {
-                            messagesView.text = "ERROR WEB"
+                            messagesView.text = "Ошибка входа"
                         }
                     }
                 }
-            }
         }
     }
 }
