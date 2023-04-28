@@ -1,7 +1,8 @@
 package com.example.mmis_lk
 
-import com.example.mmis_lk.retrofit.models.userLogin
 import android.annotation.SuppressLint
+import android.content.Context
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
@@ -9,6 +10,7 @@ import android.widget.EditText
 import android.widget.TextView
 import com.example.mmis_lk.retrofit.RetrofitClient
 import com.example.mmis_lk.retrofit.interfaces.mmisApi
+import com.example.mmis_lk.retrofit.models.profile
 import kotlinx.coroutines.*
 
 class MainActivity : AppCompatActivity() {
@@ -21,6 +23,11 @@ class MainActivity : AppCompatActivity() {
         val loginPassword = findViewById<EditText>(R.id.editTextTextPassword)
         val messagesView = findViewById<TextView>(R.id.textViewMessage)
         val loginBt = findViewById<Button>(R.id.buttonLogin)
+        val sharedPref = getSharedPreferences("myPrefs", Context.MODE_PRIVATE)
+        val profileActivity = Intent(this, ProfileActivity::class.java)
+        if (sharedPref.getString("token", "") != ""){
+            startActivity(profileActivity)
+        }
         loginBt.setOnClickListener {
             val email = loginEmail.text.toString()
             val password = loginPassword.text.toString()
@@ -28,19 +35,25 @@ class MainActivity : AppCompatActivity() {
                 val api = client.create(mmisApi::class.java)
                 CoroutineScope(Dispatchers.IO).launch {
                     try {
-                        val log = userLogin(email, password)
-                        val profile = api.login(log)
+                        val log = profile(email, password)
+                        val authToken = api.login(log)
                         runOnUiThread {
-                            if (profile.id != null){
-                                messagesView.text = "Вход успешный!"
+                            if (authToken != null){
+                                var editor = sharedPref.edit()
+                                editor.putString("token", authToken.token)
+                                editor.commit()
                             }
                         }
                     } catch (error: Exception){
                         runOnUiThread {
                             messagesView.text = "Ошибка входа"
+                            messagesView.text = error.toString()
                         }
                     }
                 }
+            if (sharedPref.getString("token", "") != ""){
+                startActivity(profileActivity)
+            }
         }
     }
 }
