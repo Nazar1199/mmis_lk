@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">mmis_lk</string>
+    <string name="localBaseUrl">http://192.168.0.10:2000/api/</string>
 </resources>

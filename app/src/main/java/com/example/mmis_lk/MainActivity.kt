@@ -16,7 +16,6 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        val localBaseUrl = "http://192.168.0.12:2000/api/"
 
         val loginEmail = findViewById<EditText>(R.id.editTextTextEmail)
         val loginPassword = findViewById<EditText>(R.id.editTextTextPassword)
@@ -25,7 +24,7 @@ class MainActivity : AppCompatActivity() {
         loginBt.setOnClickListener {
             val email = loginEmail.text.toString()
             val password = loginPassword.text.toString()
-                val client = RetrofitClient.getClient(localBaseUrl)
+            val client = RetrofitClient.getClient(resources.getString(R.string.localBaseUrl))
                 val api = client.create(mmisApi::class.java)
                 CoroutineScope(Dispatchers.IO).launch {
                     try {
