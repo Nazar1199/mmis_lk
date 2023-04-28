@@ -1,6 +1,6 @@
 package com.example.mmis_lk
 
-import com.example.mmis_lk.retrofit.models.UserLogin
+import com.example.mmis_lk.retrofit.models.userLogin
 import android.annotation.SuppressLint
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -8,7 +8,7 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import com.example.mmis_lk.retrofit.RetrofitClient
-import com.example.mmis_lk.retrofit.interfaces.mmis_api
+import com.example.mmis_lk.retrofit.interfaces.mmisApi
 import kotlinx.coroutines.*
 
 class MainActivity : AppCompatActivity() {
@@ -26,10 +26,10 @@ class MainActivity : AppCompatActivity() {
             val email = loginEmail.text.toString()
             val password = loginPassword.text.toString()
                 val client = RetrofitClient.getClient(localBaseUrl)
-                val api = client.create(mmis_api::class.java)
+                val api = client.create(mmisApi::class.java)
                 CoroutineScope(Dispatchers.IO).launch {
                     try {
-                        val log = UserLogin(email, password)
+                        val log = userLogin(email, password)
                         val profile = api.login(log)
                         runOnUiThread {
                             if (profile.id != null){

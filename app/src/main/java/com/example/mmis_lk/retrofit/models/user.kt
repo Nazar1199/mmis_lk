@@ -1,4 +1,6 @@
- data class User(
+package com.example.mmis_lk.retrofit.models
+
+data class user(
       val username: String,
       val password: String,
      val email: String,
