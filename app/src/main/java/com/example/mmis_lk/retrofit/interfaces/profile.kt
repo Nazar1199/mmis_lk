@@ -1,9 +1,7 @@
 package com.example.mmis_lk.retrofit.interfaces
 
-import UserLogin
-import android.provider.ContactsContract.CommonDataKinds.Email
+import com.example.mmis_lk.retrofit.models.UserLogin
 import com.example.mmis_lk.retrofit.models.profile
-import retrofit2.Call
 import retrofit2.http.Body
 import retrofit2.http.POST
 

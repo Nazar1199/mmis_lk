@@ -1,6 +1,6 @@
 package com.example.mmis_lk
 
-import UserLogin
+import com.example.mmis_lk.retrofit.models.UserLogin
 import android.annotation.SuppressLint
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

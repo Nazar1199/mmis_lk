@@ -1,7 +1,7 @@
 package com.example.mmis_lk.retrofit.interfaces
 
 import User
-import UserLogin
+import com.example.mmis_lk.retrofit.models.UserLogin
 import retrofit2.Call
 import retrofit2.http.Body
 import retrofit2.http.POST
