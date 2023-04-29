@@ -40,11 +40,13 @@
 
     <Button
         android:id="@+id/buttonLogin"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="16dp"
+        android:layout_marginStart="16dp"
         android:text="Login"
+        android:theme="@style/Widget.Material3.Button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/editTextTextPassword" />
 
@@ -55,6 +57,7 @@
         android:ems="10"
         android:layout_margin="8dp"
         android:inputType="textEmailAddress"
+        android:theme="@style/Widget.Material3.TextInputEditText.OutlinedBox"
         android:text=""
         app:layout_constraintStart_toStartOf="@+id/textViewLogin"
         app:layout_constraintTop_toBottomOf="@+id/textViewLogin" />
@@ -65,7 +68,8 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:layout_margin="8dp"
-        android:inputType="text"
+        android:inputType="textPassword"
+        android:theme="@style/Widget.Material3.TextInputEditText.OutlinedBox"
         app:layout_constraintStart_toStartOf="@+id/textViewPassword"
         app:layout_constraintTop_toBottomOf="@+id/textViewPassword" />
 
