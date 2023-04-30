@@ -10,7 +10,7 @@ import android.widget.EditText
 import android.widget.TextView
 import com.example.mmis_lk.retrofit.RetrofitClient
 import com.example.mmis_lk.retrofit.interfaces.mmisApi
-import com.example.mmis_lk.retrofit.models.profile
+import com.example.mmis_lk.retrofit.models.Profile
 import kotlinx.coroutines.*
 
 class MainActivity : AppCompatActivity() {
@@ -36,7 +36,7 @@ class MainActivity : AppCompatActivity() {
                 val api = client.create(mmisApi::class.java)
                 CoroutineScope(Dispatchers.IO).launch {
                     try {
-                        val log = profile(email, password)
+                        val log = Profile(email, password)
                         val authToken = api.login(log)
                         runOnUiThread {
                             if (authToken != null){

@@ -1,6 +1,6 @@
 package com.example.mmis_lk.retrofit.models
 
-data class student(
+data class Student(
     val birthdate: String,
     val email: String,
     val firstName: String,
