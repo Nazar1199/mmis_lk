@@ -1,6 +1,5 @@
 package com.example.mmis_lk.retrofit.interfaces
 
-import com.example.mmis_lk.retrofit.models.userLogin
 import com.example.mmis_lk.retrofit.models.profile
 import com.example.mmis_lk.retrofit.models.student
 import com.example.mmis_lk.retrofit.models.token
