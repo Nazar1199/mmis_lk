@@ -7,9 +7,11 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
+import android.widget.ImageView
 import android.widget.TextView
 import com.example.mmis_lk.retrofit.RetrofitClient
 import com.example.mmis_lk.retrofit.interfaces.mmisApi
+import com.squareup.picasso.Picasso
 import kotlinx.coroutines.*
 
 class ProfileActivity : AppCompatActivity() {
@@ -23,6 +25,7 @@ class ProfileActivity : AppCompatActivity() {
         val group = findViewById<TextView>(R.id.textViewGroupValue)
         val name = findViewById<TextView>(R.id.textViewName)
         val logOutBt = findViewById<Button>(R.id.buttonLogout)
+        val avatar = findViewById<ImageView>(R.id.imageViewAvatar)
         val sharedPref = getSharedPreferences("myPrefs", Context.MODE_PRIVATE)
         val savedToken = sharedPref.getString("token", "")
         email.text = savedToken
@@ -37,6 +40,7 @@ class ProfileActivity : AppCompatActivity() {
                         email.text = currentStudent.email
                         phone.text = currentStudent.phone
                         group.text = currentStudent.group.name
+                        Picasso.get().load(currentStudent.photo).into(avatar)
                     }
                 }
             } catch (error: Exception){

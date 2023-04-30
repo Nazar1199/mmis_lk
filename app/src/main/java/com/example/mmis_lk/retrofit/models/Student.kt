@@ -7,6 +7,7 @@ data class Student(
     val id: Int,
     val lastName: String,
     val patronymic: String,
+    val photo: String,
     val phone: String,
     val reportCard: Int,
     val group: Group

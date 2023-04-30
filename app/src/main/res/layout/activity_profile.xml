@@ -12,12 +12,12 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="10dp"
         android:text="@string/name"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@id/imageViewAvatar" />
 
     <TextView
         android:layout_marginTop="8dp"
@@ -107,5 +107,15 @@
         android:theme="@style/Widget.Material3.Button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/textViewGroupValue" />
+
+    <ImageView
+        android:id="@+id/imageViewAvatar"
+        android:layout_width="110dp"
+        android:layout_height="110dp"
+        android:layout_marginTop="32dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/default_avatar" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
