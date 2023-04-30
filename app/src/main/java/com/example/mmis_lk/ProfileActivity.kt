@@ -6,6 +6,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
+import android.widget.EditText
 import android.widget.TextView
 import com.example.mmis_lk.retrofit.RetrofitClient
 import com.example.mmis_lk.retrofit.interfaces.mmisApi
@@ -17,8 +18,9 @@ class ProfileActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_profile)
 
-        val email = findViewById<TextView>(R.id.textViewEmail)
-        val phone = findViewById<TextView>(R.id.textViewPhone)
+        val email = findViewById<TextView>(R.id.textViewEmailValue)
+        val phone = findViewById<TextView>(R.id.textViewPhoneValue)
+        val group = findViewById<TextView>(R.id.textViewGroupValue)
         val name = findViewById<TextView>(R.id.textViewName)
         val logOutBt = findViewById<Button>(R.id.buttonLogout)
         val sharedPref = getSharedPreferences("myPrefs", Context.MODE_PRIVATE)
@@ -31,15 +33,16 @@ class ProfileActivity : AppCompatActivity() {
                 val currentStudent = api.getMyProfile(savedToken.toString())
                 runOnUiThread {
                     if (currentStudent.id !== null){
+                        name.text = currentStudent.firstName + " " + currentStudent.lastName
                         email.text = currentStudent.email
                         phone.text = currentStudent.phone
-                        name.text = currentStudent.firstName + " " + currentStudent.lastName
+                        group.text = currentStudent.group.name
                     }
                 }
             } catch (error: Exception){
                 runOnUiThread {
                     val err = "Ошибка входа"
-                    phone.text = error.toString()
+//                    phone.text = error.toString()
                 }
             }
         }
