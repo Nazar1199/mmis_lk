@@ -6,7 +6,6 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
-import android.widget.EditText
 import android.widget.ImageView
 import android.widget.TextView
 import com.example.mmis_lk.retrofit.RetrofitClient
@@ -40,12 +39,14 @@ class ProfileActivity : AppCompatActivity() {
                         email.text = currentStudent.email
                         phone.text = currentStudent.phone
                         group.text = currentStudent.group.name
-                        Picasso.get().load(currentStudent.photo).into(avatar)
+                        Picasso.get()
+                            .load(currentStudent.photo)
+                            .into(avatar)
                     }
                 }
             } catch (error: Exception){
                 runOnUiThread {
-                    val err = "Ошибка входа"
+                    val err = getString(R.string.login_error)
 //                    phone.text = error.toString()
                 }
             }
@@ -55,8 +56,8 @@ class ProfileActivity : AppCompatActivity() {
             editor.putString("token", "")
             editor.commit()
             if (sharedPref.getString("token", "") == ""){
-                val mainActivity = Intent(this, MainActivity::class.java)
-                startActivity(mainActivity)
+                val loginActivity = Intent(this, LoginActivity::class.java)
+                startActivity(loginActivity)
             }
         }
     }

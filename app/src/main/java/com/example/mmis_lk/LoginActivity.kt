@@ -13,11 +13,11 @@ import com.example.mmis_lk.retrofit.interfaces.mmisApi
 import com.example.mmis_lk.retrofit.models.Profile
 import kotlinx.coroutines.*
 
-class MainActivity : AppCompatActivity() {
+class LoginActivity : AppCompatActivity() {
     @SuppressLint("SuspiciousIndentation")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_login)
 
         val loginEmail = findViewById<EditText>(R.id.editTextTextEmail)
         val loginPassword = findViewById<EditText>(R.id.editTextTextPassword)
