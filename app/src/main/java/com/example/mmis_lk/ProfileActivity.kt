@@ -22,7 +22,7 @@ class ProfileActivity : AppCompatActivity() {
         val name = findViewById<TextView>(R.id.textViewName)
         val logOutBt = findViewById<Button>(R.id.buttonLogout)
         val sharedPref = getSharedPreferences("myPrefs", Context.MODE_PRIVATE)
-        val savedToken = sharedPref.getString("token", "WRONG TOKEN")
+        val savedToken = sharedPref.getString("token", "")
         email.text = savedToken
         val client = RetrofitClient.getClient(resources.getString(R.string.localBaseUrl))
         val api = client.create(mmisApi::class.java)
