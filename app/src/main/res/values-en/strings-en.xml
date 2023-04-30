@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Personal account</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="login">Login</string>
+    <string name="logout">Logout</string>
+    <string name="name">Name</string>
+    <string name="phone">Phone</string>
+    <string name="login_welcome_message">Login to your personal account</string>
+    <string name="messages">Messages</string>
+    <string name="login_success">Login success</string>
+    <string name="login_error">Loging error</string>
+</resources>

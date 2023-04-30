@@ -29,6 +29,7 @@ class MainActivity : AppCompatActivity() {
             startActivity(profileActivity)
         }
         loginBt.setOnClickListener {
+            messagesView.text = ""
             val email = loginEmail.text.toString()
             val password = loginPassword.text.toString()
             val client = RetrofitClient.getClient(resources.getString(R.string.localBaseUrl))
@@ -42,12 +43,13 @@ class MainActivity : AppCompatActivity() {
                                 var editor = sharedPref.edit()
                                 editor.putString("token", authToken.token)
                                 editor.commit()
+                                messagesView.text = getString(R.string.login_success)
                             }
                         }
                     } catch (error: Exception){
                         runOnUiThread {
-                            messagesView.text = "Ошибка входа"
-                            messagesView.text = error.toString()
+                            messagesView.text = getString(R.string.login_error)
+//                            messagesView.text = error.toString()
                         }
                     }
                 }
