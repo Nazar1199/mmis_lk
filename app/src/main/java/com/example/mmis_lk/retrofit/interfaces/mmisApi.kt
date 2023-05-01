@@ -1,8 +1,6 @@
 package com.example.mmis_lk.retrofit.interfaces
 
-import com.example.mmis_lk.retrofit.models.Profile
-import com.example.mmis_lk.retrofit.models.Student
-import com.example.mmis_lk.retrofit.models.Token
+import com.example.mmis_lk.retrofit.models.*
 import retrofit2.http.*
 
 interface mmisApi {
@@ -11,4 +9,14 @@ interface mmisApi {
 
     @GET("student/me")
     suspend fun getMyProfile(@Header("Authorization") token: String): Student
+
+    @GET("reference")
+    suspend fun getAllReferences(): Array<Reference>
+
+    @GET("orderingReference/me")
+    suspend fun getMyReferences(@Header("Authorization") token: String): Array<OrderingReference>
+
+    @POST("orderingReference/me")
+    suspend fun login(@Body reference: Reference): OrderingReference
+
 }
