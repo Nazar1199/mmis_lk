@@ -9,11 +9,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
         android:text="@string/reference"
         android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="@+id/buttonForReferenceStatus"
+        app:layout_constraintBottom_toTopOf="@+id/textViewReferenceDate"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/buttonForReferenceStatus" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/buttonForReferenceStatus"
@@ -25,15 +26,18 @@
         android:theme="@style/Widget.Material3.Button"
         android:background="@drawable/button_red"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewReferenceDate" />
+        app:layout_constraintBottom_toBottomOf="@id/textViewReferenceDate"
+        app:layout_constraintTop_toTopOf="@id/textViewReferenceName"/>
 
     <TextView
         android:id="@+id/textViewReferenceDate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
         android:text="@string/sample_date"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textViewReferenceName" />
 </androidx.constraintlayout.widget.ConstraintLayout>
