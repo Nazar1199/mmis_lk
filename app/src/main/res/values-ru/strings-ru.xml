@@ -12,4 +12,10 @@
     <string name="login_success">Успешный вход</string>
     <string name="login_error">Ошибка входа</string>
     <string name="group">Группа</string>
+    <string name="reference">Справка</string>
+    <string name="order_reference">Заказать справку</string>
+    <string name="my_references">Мои справки</string>
+    <string name="date">Дата</string>
+    <string name="status">Статус</string>
+    <string name="references">Справки</string>
 </resources>

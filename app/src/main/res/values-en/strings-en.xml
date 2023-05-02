@@ -12,4 +12,10 @@
     <string name="login_success">Login success</string>
     <string name="login_error">Loging error</string>
     <string name="group">Group</string>
+    <string name="reference">Reference</string>
+    <string name="order_reference">Order reference</string>
+    <string name="my_references">My references</string>
+    <string name="date">Date</string>
+    <string name="status">Status</string>
+    <string name="references">References</string>
 </resources>
