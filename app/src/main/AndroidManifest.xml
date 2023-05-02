@@ -23,6 +23,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".ProfileActivity" />
-        <activity android:name=".ReferenceActivity" />
+        <activity
+            android:name=".ReferenceActivity"
+            android:label="@string/my_references" />
     </application>
 </manifest>
