@@ -17,6 +17,6 @@ interface mmisApi {
     suspend fun getMyReferences(@Header("Authorization") token: String): Array<OrderingReference>
 
     @POST("orderingReference/me")
-    suspend fun login(@Body reference: Reference): OrderingReference
+    suspend fun orderReferenceForMe(@Body reference: Reference): OrderingReference
 
 }
