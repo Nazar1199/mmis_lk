@@ -27,7 +27,7 @@ class OrderingReferenceAdapter(private val dataSet: Array<OrderingReference>) :
     override fun onCreateViewHolder(viewGroup: ViewGroup, viewType: Int): ViewHolder {
         // Create a new view, which defines the UI of the list item
         val itemView = LayoutInflater.from(viewGroup.context)
-            .inflate(R.layout.item_reference, viewGroup, false)
+            .inflate(R.layout.item_ordering_reference, viewGroup, false)
 
         return ViewHolder(itemView)
     }
