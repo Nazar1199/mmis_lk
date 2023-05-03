@@ -11,12 +11,12 @@ interface mmisApi {
     suspend fun getMyProfile(@Header("Authorization") token: String): Student
 
     @GET("reference")
-    suspend fun getAllReferences(): Array<Reference>
+    suspend fun getAllReferences(@Header("Authorization") token: String): Array<Reference>
 
     @GET("orderingReference/me")
     suspend fun getMyReferences(@Header("Authorization") token: String): Array<OrderingReference>
 
     @POST("orderingReference/me")
-    suspend fun orderReferenceForMe(@Body reference: Reference): OrderingReference
+    suspend fun orderReferenceForMe(@Header("Authorization") token: String, @Body reference: Reference): OrderingReference
 
 }
