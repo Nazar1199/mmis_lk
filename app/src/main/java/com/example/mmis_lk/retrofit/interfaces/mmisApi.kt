@@ -19,4 +19,7 @@ interface mmisApi {
     @POST("orderingReference/me")
     suspend fun orderReferenceForMe(@Header("Authorization") token: String, @Body reference: Reference): OrderingReference
 
+    @GET("auditorium")
+    suspend fun getAllAuditoriums(@Header("Authorization") token: String): Array<Auditorium>
+
 }
