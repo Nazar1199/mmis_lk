@@ -22,4 +22,7 @@ interface mmisApi {
     @GET("auditorium")
     suspend fun getAllAuditoriums(@Header("Authorization") token: String): Array<Auditorium>
 
+    @GET("teacher")
+    suspend fun getAllTeachers(@Header("Authorization") token: String): Array<Teacher>
+
 }
