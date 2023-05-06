@@ -40,15 +40,6 @@ class OrderingReferenceAdapter(private val dataSet: Array<OrderingReference>) :
         viewHolder.referenceName.text = dataSet[position].reference.name
         viewHolder.referenceDate.text = dataSet[position].date.toString()
         viewHolder.referenceStatus.text = dataSet[position].status.name
-//        if (dataSet[position].status.id == 1){
-//            viewHolder.referenceStatus.setBackgroundResource(R.drawable.button_green)
-//        }
-//        if (dataSet[position].status.id == 2){
-//            viewHolder.referenceStatus.setBackgroundResource(R.drawable.button_red)
-//        }
-//        if (dataSet[position].status.id == 3){
-//            viewHolder.referenceStatus.setBackgroundResource(R.drawable.button_orange)
-//        }
     }
 
     // Return the size of your dataset (invoked by the layout manager)
