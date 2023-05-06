@@ -18,4 +18,6 @@
     <string name="date">Дата</string>
     <string name="status">Статус</string>
     <string name="references">Справки</string>
+    <string name="teacher">Преподаватель</string>
+    <string name="teachers">Преподаватели</string>
 </resources>
