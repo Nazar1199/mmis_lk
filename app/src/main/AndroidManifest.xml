@@ -26,5 +26,8 @@
         <activity
             android:name=".ReferenceActivity"
             android:label="@string/my_references" />
+        <activity
+            android:name=".TeacherListActivity"
+            android:label="@string/teachers" />
     </application>
 </manifest>

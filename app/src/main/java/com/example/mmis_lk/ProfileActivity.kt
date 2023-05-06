@@ -25,6 +25,7 @@ class ProfileActivity : AppCompatActivity() {
         val name = findViewById<TextView>(R.id.textViewName)
         val logOutBt = findViewById<Button>(R.id.buttonLogout)
         val myRefsBt = findViewById<Button>(R.id.buttonMyReferences)
+        val toTeachersBt = findViewById<Button>(R.id.buttonToTeachersList)
         val avatar = findViewById<ImageView>(R.id.imageViewAvatar)
 
         val sharedPref = getSharedPreferences("myPrefs", Context.MODE_PRIVATE)
@@ -64,6 +65,10 @@ class ProfileActivity : AppCompatActivity() {
         myRefsBt.setOnClickListener {
             val referencesActivity = Intent(this, ReferenceActivity::class.java)
             startActivity(referencesActivity)
+        }
+        toTeachersBt.setOnClickListener {
+            val teacherListActivity = Intent(this, TeacherListActivity::class.java)
+            startActivity(teacherListActivity)
         }
     }
 }
