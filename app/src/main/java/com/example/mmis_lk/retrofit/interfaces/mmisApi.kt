@@ -25,4 +25,7 @@ interface mmisApi {
     @GET("teacher")
     suspend fun getAllTeachers(@Header("Authorization") token: String): Array<Teacher>
 
+    @GET("teacher/{id}")
+    suspend fun getTeacherById(@Header("Authorization") token: String, @Path("id") id: Int): Teacher
+
 }
