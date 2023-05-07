@@ -29,5 +29,8 @@
         <activity
             android:name=".TeacherListActivity"
             android:label="@string/teachers" />
+        <activity
+            android:name=".TeacherActivity"
+            android:label="@string/teacher" />
     </application>
 </manifest>
