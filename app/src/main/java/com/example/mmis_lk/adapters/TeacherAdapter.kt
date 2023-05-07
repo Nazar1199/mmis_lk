@@ -12,6 +12,7 @@ import com.squareup.picasso.Picasso
 
 class TeacherAdapter(private val dataSet: Array<Teacher>) :
     RecyclerView.Adapter<TeacherAdapter.ViewHolder>() {
+    var onClickListener: ((Teacher) -> Unit)? = null
 
     /**
      * Provide a reference to the type of views that you are using
@@ -41,9 +42,22 @@ class TeacherAdapter(private val dataSet: Array<Teacher>) :
         Picasso.get()
             .load(dataSet[position].photo)
             .into(viewHolder.teacherAvatar)
+        viewHolder.itemView.setOnClickListener {
+            onClickListener?.invoke(dataSet[position])
+        }
     }
 
     // Return the size of your dataset (invoked by the layout manager)
     override fun getItemCount() = dataSet.size
 
+
+    // A function to bind the onclickListener.
+    fun setOnClickListener(onClickListener: OnClickListener) {
+        this.onClickListener = onClickListener
+    }
+
+    // onClickListener Interface
+    interface OnClickListener : (Teacher) -> Unit {
+        fun onClick(position: Int, model: Teacher)
+    }
 }
