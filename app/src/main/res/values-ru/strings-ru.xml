@@ -20,4 +20,7 @@
     <string name="references">Справки</string>
     <string name="teacher">Преподаватель</string>
     <string name="teachers">Преподаватели</string>
+    <string name="department">Кафедра</string>
+    <string name="faculty">Факультет</string>
+    <string name="position">Должность</string>
 </resources>
