@@ -2,6 +2,7 @@ package com.example.mmis_lk
 
 import android.annotation.SuppressLint
 import android.content.Context
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.recyclerview.widget.RecyclerView
@@ -28,8 +29,14 @@ class TeacherListActivity : AppCompatActivity() {
         CoroutineScope(Dispatchers.IO).launch {
             try {
                 val teachers = api.getAllTeachers(savedToken.toString())
-                recyclerList.adapter = TeacherAdapter(teachers)
-            } catch (error: Exception){
+                val myAdapter = TeacherAdapter(teachers)
+                recyclerList.adapter = myAdapter
+                myAdapter.onClickListener = {
+                    val intent = Intent(this@TeacherListActivity, TeacherActivity::class.java)
+                    intent.putExtra("currentTeacherId", it.id)
+                    startActivity(intent)
+                }
+            } catch (_: Exception){
                 
             }
         }
