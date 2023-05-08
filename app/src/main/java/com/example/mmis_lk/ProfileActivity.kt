@@ -22,6 +22,8 @@ class ProfileActivity : AppCompatActivity() {
         val email = findViewById<TextView>(R.id.textViewEmailValue)
         val phone = findViewById<TextView>(R.id.textViewPhoneValue)
         val group = findViewById<TextView>(R.id.textViewGroupValue)
+        val reportCard = findViewById<TextView>(R.id.textViewReportCardValue)
+        val birthDate = findViewById<TextView>(R.id.textViewBirthDateValue)
         val name = findViewById<TextView>(R.id.textViewName)
         val logOutBt = findViewById<Button>(R.id.buttonLogout)
         val myRefsBt = findViewById<Button>(R.id.buttonMyReferences)
@@ -41,6 +43,8 @@ class ProfileActivity : AppCompatActivity() {
                         email.text = currentStudent.email
                         phone.text = currentStudent.phone
                         group.text = currentStudent.group.name
+                        birthDate.text = currentStudent.birthdate
+                        reportCard.text = currentStudent.reportCard
                         Picasso.get()
                             .load(currentStudent.photo)
                             .into(avatar)

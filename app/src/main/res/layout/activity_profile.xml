@@ -97,6 +97,57 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textViewGroup" />
 
+    <TextView
+        android:layout_marginTop="8dp"
+        android:id="@+id/textViewReportCard"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="@string/report_card"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewGroupValue" />
+
+    <TextView
+        android:id="@+id/textViewReportCardValue"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:textSize="20sp"
+        android:inputType="textPersonName"
+        android:text="@string/report_card"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        tools:layout_editor_absoluteX="21dp"
+        tools:layout_editor_absoluteY="179dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewReportCard" />
+    <TextView
+        android:layout_marginTop="8dp"
+        android:id="@+id/textViewBirthDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="@string/birth_date"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewReportCardValue" />
+
+    <TextView
+        android:id="@+id/textViewBirthDateValue"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:textSize="20sp"
+        android:inputType="textPersonName"
+        android:text="@string/sample_date"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        tools:layout_editor_absoluteX="21dp"
+        tools:layout_editor_absoluteY="179dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewBirthDate" />
+
     <Button
         android:id="@+id/buttonMyReferences"
         android:layout_width="match_parent"
@@ -107,7 +158,7 @@
         android:text="@string/my_references"
         android:theme="@style/Widget.Material3.Button"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/textViewGroupValue" />
+        app:layout_constraintTop_toBottomOf="@id/textViewBirthDateValue" />
 
     <Button
         android:id="@+id/buttonToTeachersList"
