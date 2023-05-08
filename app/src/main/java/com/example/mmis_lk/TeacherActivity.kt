@@ -20,6 +20,7 @@ class TeacherActivity : AppCompatActivity() {
         val email = findViewById<TextView>(R.id.textViewEmailValue)
         val position = findViewById<TextView>(R.id.textViewPositionValue)
         val name = findViewById<TextView>(R.id.textViewName)
+        val department = findViewById<TextView>(R.id.textViewDepartmentValue)
         val avatar = findViewById<ImageView>(R.id.imageViewTeacherAvatar)
 
         val currentTeacherId = intent.getIntExtra("currentTeacherId", 0).toInt()
@@ -35,6 +36,7 @@ class TeacherActivity : AppCompatActivity() {
                         name.text = currentTeacher.lastName + " " + currentTeacher.firstName + " " + currentTeacher.patronymic
                         email.text = currentTeacher.email
                         position.text = currentTeacher.position.name
+                        department.text = currentTeacher.department.name
                         Picasso.get()
                             .load(currentTeacher.photo)
                             .into(avatar)
