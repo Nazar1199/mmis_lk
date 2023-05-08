@@ -8,5 +8,6 @@ data class Teacher(
     val position: Position,
     val patronymic: String,
     val phone: String,
-    val photo: String
+    val photo: String,
+    val department: Department
 )
