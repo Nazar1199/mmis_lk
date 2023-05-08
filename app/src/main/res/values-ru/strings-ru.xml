@@ -23,4 +23,7 @@
     <string name="department">Кафедра</string>
     <string name="faculty">Факультет</string>
     <string name="position">Должность</string>
+    <string name="report_card">Зачетная книжка</string>
+    <string name="birth_date">Дата рождения</string>
+    <string name="time_table">Расписание</string>
 </resources>
