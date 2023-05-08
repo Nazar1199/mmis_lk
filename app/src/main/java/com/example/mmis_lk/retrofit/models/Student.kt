@@ -9,6 +9,6 @@ data class Student(
     val patronymic: String,
     val photo: String,
     val phone: String,
-    val reportCard: Int,
+    val reportCard: String,
     val group: Group
 )
