@@ -2,9 +2,7 @@ package com.example.mmis_lk.classes
 
 import android.app.AlertDialog
 import android.app.Dialog
-import android.content.Context
 import android.content.DialogInterface
-import android.content.SharedPreferences
 import android.os.Bundle
 import android.widget.Toast
 import androidx.fragment.app.DialogFragment
@@ -24,7 +22,7 @@ class ReferenceListDialog(savedToken: String?) : DialogFragment() {
         return activity.let {
             val builder = AlertDialog.Builder(it)
             val listRefNames = arrayOf("Справка об обучении", "Справка о стипендии")
-            val client = RetrofitClient.getClient(resources.getString(R.string.localBaseUrl))
+            val client = RetrofitClient.getClient(resources.getString(R.string.local_base_url))
             val api = client.create(mmisApi::class.java)
             val listRefs: MutableList<Reference> = arrayListOf()
             CoroutineScope(Dispatchers.IO).launch {

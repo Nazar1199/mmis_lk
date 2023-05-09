@@ -32,7 +32,7 @@ class LoginActivity : AppCompatActivity() {
             messagesView.text = ""
             val email = loginEmail.text.toString()
             val password = loginPassword.text.toString()
-            val client = RetrofitClient.getClient(resources.getString(R.string.localBaseUrl))
+            val client = RetrofitClient.getClient(resources.getString(R.string.local_base_url))
                 val api = client.create(mmisApi::class.java)
                 CoroutineScope(Dispatchers.IO).launch {
                     try {
