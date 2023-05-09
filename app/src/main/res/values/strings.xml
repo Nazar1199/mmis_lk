@@ -31,4 +31,8 @@
     <string name="lesson_time_start" translatable="false">10:20</string>
     <string name="lesson_time_end" translatable="false">11:50</string>
     <string name="auditorium_sample" translatable="false">2165</string>
+    <string name="lesson_time_start_end" translatable="false">10:20 11:50</string>
+    <string name="lesson_type_aud" translatable="false">ПР 2165</string>
+    <string name="discipline_name_sample" translatable="false">Информационные системы в области образования</string>
+    <string name="teacher_name_sample" translatable="false">Мальцев Игорь Михайлович</string>
 </resources>
