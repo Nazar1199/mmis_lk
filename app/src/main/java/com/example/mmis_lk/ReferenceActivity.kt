@@ -15,7 +15,7 @@ import kotlinx.coroutines.*
 import java.util.*
 
 class ReferenceActivity : AppCompatActivity() {
-    var savedToken: String? = "wad"
+    var savedToken: String? = ""
     @SuppressLint("SuspiciousIndentation")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
