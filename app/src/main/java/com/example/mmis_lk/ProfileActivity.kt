@@ -27,6 +27,7 @@ class ProfileActivity : AppCompatActivity() {
         val name = findViewById<TextView>(R.id.textViewName)
         val logOutBt = findViewById<Button>(R.id.buttonLogout)
         val myRefsBt = findViewById<Button>(R.id.buttonMyReferences)
+        val toTimetable = findViewById<Button>(R.id.buttonToTimetable)
         val toTeachersBt = findViewById<Button>(R.id.buttonToTeachersList)
         val avatar = findViewById<ImageView>(R.id.imageViewAvatar)
 
@@ -73,6 +74,10 @@ class ProfileActivity : AppCompatActivity() {
         toTeachersBt.setOnClickListener {
             val teacherListActivity = Intent(this, TeacherListActivity::class.java)
             startActivity(teacherListActivity)
+        }
+        toTimetable.setOnClickListener {
+            val timetableActivity = Intent(this, TimetableActivity::class.java)
+            startActivity(timetableActivity)
         }
     }
 }
