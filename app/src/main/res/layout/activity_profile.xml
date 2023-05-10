@@ -173,6 +173,18 @@
         app:layout_constraintTop_toBottomOf="@id/buttonMyReferences" />
 
     <Button
+        android:id="@+id/buttonToTimetable"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginStart="16dp"
+        android:text="@string/time_table"
+        android:theme="@style/Widget.Material3.Button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/buttonToTeachersList" />
+
+    <Button
         android:id="@+id/buttonLogout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -181,7 +193,7 @@
         android:text="@string/logout"
         android:theme="@style/Widget.Material3.Button"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/buttonToTeachersList" />
+        app:layout_constraintTop_toBottomOf="@id/buttonToTimetable" />
 
     <ImageView
         android:id="@+id/imageViewAvatar"
