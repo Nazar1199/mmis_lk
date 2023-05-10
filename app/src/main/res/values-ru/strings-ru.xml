@@ -26,4 +26,11 @@
     <string name="report_card">Зачетная книжка</string>
     <string name="birth_date">Дата рождения</string>
     <string name="time_table">Расписание</string>
+    <string name="friday">Пятница</string>
+    <string name="moonday">Понедельник</string>
+    <string name="tuesday">Вторник</string>
+    <string name="wednesday">Среда</string>
+    <string name="thursday">Четверг</string>
+    <string name="saturday">Суббота</string>
+    <string name="sunday">Воскресенье</string>
 </resources>
