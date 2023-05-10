@@ -47,7 +47,7 @@ class LessonTimetableAdapter(private val dataSet: Array<TimeTable>) :
                 dataSet[position].teacher.patronymic
         viewHolder.lessonTime.text = dataSet[position].lessonTime.startTime + " " +
                 dataSet[position].lessonTime.endTime
-        viewHolder.typeAud.text = dataSet[position].lessonType.name + " " +
+        viewHolder.typeAud.text = dataSet[position].lessonType.abbr + " " +
                 dataSet[position].auditorium.name
     }
 
