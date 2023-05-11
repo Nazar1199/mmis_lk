@@ -1,5 +1,6 @@
 package com.example.mmis_lk.adapters
 
+import android.icu.text.SimpleDateFormat
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -8,6 +9,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.mmis_lk.R
 import com.example.mmis_lk.retrofit.models.TimeTable
+import java.util.*
 
 class DayTimetableAdapter(private val dataSet: Array<Array<TimeTable>>) :
     RecyclerView.Adapter<DayTimetableAdapter.ViewHolder>() {
@@ -35,7 +37,10 @@ class DayTimetableAdapter(private val dataSet: Array<Array<TimeTable>>) :
     override fun onBindViewHolder(viewHolder: ViewHolder, position: Int) {
         // Get element from your dataset at this position and replace the
         // contents of the view with that element
-        viewHolder.dateBt.text = dataSet[position][0].date.toString()
+        var dateFormater: SimpleDateFormat = SimpleDateFormat("dd.MM.yy")
+        var dayOfDateFormater: SimpleDateFormat = SimpleDateFormat("EEEE")
+        viewHolder.dateBt.text = dateFormater.format(dataSet[position][0].date)
+        viewHolder.dateDayBt.text = dayOfDateFormater.format(dataSet[position][0].date)
         viewHolder.lessonsRecyclerView.layoutManager = LinearLayoutManager(viewHolder.lessonsRecyclerView.context  , LinearLayoutManager.VERTICAL, false)
 //        val ar: Array<TimeTable> = dataSet[position].sortBy { it.lessonTime.number }
         viewHolder.lessonsRecyclerView.adapter = LessonTimetableAdapter(dataSet[position])

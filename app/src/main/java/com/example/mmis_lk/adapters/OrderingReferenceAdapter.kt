@@ -1,5 +1,6 @@
 package com.example.mmis_lk.adapters
 
+import android.icu.text.SimpleDateFormat
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -37,8 +38,9 @@ class OrderingReferenceAdapter(private val dataSet: Array<OrderingReference>) :
 
         // Get element from your dataset at this position and replace the
         // contents of the view with that element
+        var dateFormater: SimpleDateFormat = SimpleDateFormat("dd.MM.yy hh:mm")
         viewHolder.referenceName.text = dataSet[position].reference.name
-        viewHolder.referenceDate.text = dataSet[position].date.toString()
+        viewHolder.referenceDate.text = dateFormater.format(dataSet[position].date)
         viewHolder.referenceStatus.text = dataSet[position].status.name
     }
 
