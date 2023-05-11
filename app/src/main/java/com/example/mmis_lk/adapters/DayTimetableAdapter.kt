@@ -42,7 +42,7 @@ class DayTimetableAdapter(private val dataSet: Array<Array<TimeTable>>) :
         viewHolder.dateBt.text = dateFormater.format(dataSet[position][0].date)
         viewHolder.dateDayBt.text = dayOfDateFormater.format(dataSet[position][0].date)
         viewHolder.lessonsRecyclerView.layoutManager = LinearLayoutManager(viewHolder.lessonsRecyclerView.context  , LinearLayoutManager.VERTICAL, false)
-//        val ar: Array<TimeTable> = dataSet[position].sortBy { it.lessonTime.number }
+        dataSet[position].sortBy { it.lessonTime.number }
         viewHolder.lessonsRecyclerView.adapter = LessonTimetableAdapter(dataSet[position])
     }
 
