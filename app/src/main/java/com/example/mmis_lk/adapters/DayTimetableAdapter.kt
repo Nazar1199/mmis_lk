@@ -22,7 +22,6 @@ class DayTimetableAdapter(private val dataSet: Array<Array<TimeTable>>) :
         // Define click listener for the ViewHolder's View
         var lessonsRecyclerView: RecyclerView = view.findViewById(R.id.lessonsRecyclerView)
         val dateBt: Button = view.findViewById(R.id.buttonDate)
-        val dateDayBt: Button = view.findViewById(R.id.buttonDayOfDate)
     }
 
     // Create new views (invoked by the layout manager)
@@ -39,8 +38,7 @@ class DayTimetableAdapter(private val dataSet: Array<Array<TimeTable>>) :
         // contents of the view with that element
         var dateFormater: SimpleDateFormat = SimpleDateFormat("dd.MM.yy")
         var dayOfDateFormater: SimpleDateFormat = SimpleDateFormat("EEEE")
-        viewHolder.dateBt.text = dateFormater.format(dataSet[position][0].date)
-        viewHolder.dateDayBt.text = dayOfDateFormater.format(dataSet[position][0].date)
+        viewHolder.dateBt.text = dateFormater.format(dataSet[position][0].date) + " --- " + dayOfDateFormater.format(dataSet[position][0].date)
         viewHolder.lessonsRecyclerView.layoutManager = LinearLayoutManager(viewHolder.lessonsRecyclerView.context  , LinearLayoutManager.VERTICAL, false)
         dataSet[position].sortBy { it.lessonTime.number }
         viewHolder.lessonsRecyclerView.adapter = LessonTimetableAdapter(dataSet[position])
