@@ -30,8 +30,23 @@ class TimetableActivity : AppCompatActivity() {
         val api = client.create(mmisApi::class.java)
         CoroutineScope(Dispatchers.IO).launch {
             try {
-                val timetables = api.getAllTimetables(savedToken.toString())
-                val arr: Array<Array<TimeTable>> = arrayOf(timetables, timetables, timetables, timetables, timetables)
+                var timetables = api.getAllTimetables(savedToken.toString())
+                timetables.sortBy { it.date }
+                var sortingTimetables: MutableList<Array<TimeTable>> = arrayListOf()
+                var sortingTimetablesForDay: MutableList<TimeTable> = arrayListOf()
+                var startDate = timetables[0].date
+                timetables.forEach {
+                    if (it.date == startDate){
+                        sortingTimetablesForDay.add(it)
+                    } else {
+                        sortingTimetables.add(sortingTimetablesForDay.toTypedArray())
+                        sortingTimetablesForDay = arrayListOf()
+                        sortingTimetablesForDay.add(it)
+                        startDate = it.date
+                    }
+                }
+                sortingTimetables.add(sortingTimetablesForDay.toTypedArray())
+                val arr: Array<Array<TimeTable>> = sortingTimetables.toTypedArray()
                 recyclerList.adapter = DayTimetableAdapter(arr)
             } catch (error: Exception){
                 
