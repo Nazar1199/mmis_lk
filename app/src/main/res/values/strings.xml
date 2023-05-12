@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">mmis_lk</string>
-    <string name="local_base_url" translatable="false">http://192.168.0.10:2000/api/</string>
+    <string name="local_base_url" translatable="false">http://192.168.0.14:2000/api/</string>
     <string name="messages">Messages</string>
     <string name="login_welcome_message">Login to your personal account</string>
     <string name="phone">Phone</string>
