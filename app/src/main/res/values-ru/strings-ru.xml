@@ -33,4 +33,5 @@
     <string name="thursday">Четверг</string>
     <string name="saturday">Суббота</string>
     <string name="sunday">Воскресенье</string>
+    <string name="auditorium">Аудитория</string>
 </resources>
