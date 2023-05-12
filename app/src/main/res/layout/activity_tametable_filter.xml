@@ -6,6 +6,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <LinearLayout
+        android:id="@+id/linearLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="horizontal">
@@ -15,12 +16,12 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="4dp"
-            android:layout_marginEnd="4dp"
             android:layout_marginTop="4dp"
+            android:layout_marginEnd="4dp"
             android:layout_marginBottom="4dp"
-            android:textSize="12dp"
             android:layout_weight="1"
-            android:text="@string/group" />
+            android:text="@string/group"
+            android:textSize="12dp" />
 
         <Button
             android:id="@+id/buttonFilterTeacher"
@@ -28,21 +29,21 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="4dp"
             android:layout_marginBottom="4dp"
-            android:textSize="12dp"
             android:layout_weight="1"
-            android:text="@string/teacher" />
+            android:text="@string/teacher"
+            android:textSize="12dp" />
 
         <Button
             android:id="@+id/buttonFilterAuditorium"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="4dp"
-            android:layout_marginEnd="4dp"
             android:layout_marginTop="4dp"
+            android:layout_marginEnd="4dp"
             android:layout_marginBottom="4dp"
-            android:textSize="12dp"
             android:layout_weight="1"
-            android:text="@string/auditorium" />
+            android:text="@string/auditorium"
+            android:textSize="12dp" />
 
     </LinearLayout>
 
