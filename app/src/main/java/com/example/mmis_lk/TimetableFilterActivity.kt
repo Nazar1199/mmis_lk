@@ -32,67 +32,64 @@ class TimetableFilterActivity : AppCompatActivity() {
         this.savedToken = sharedPref.getString("token", "")
         val client = RetrofitClient.getClient(resources.getString(R.string.local_base_url))
         val api = client.create(mmisApi::class.java)
-        CoroutineScope(Dispatchers.IO).launch {
-            try {
-                val groups = api.getAllGroups(savedToken.toString())
-                val groupAdapter = TimetableGroupFilterAdapter(groups)
-                recyclerList.adapter = groupAdapter
-                groupAdapter.onClickListener = {
-                    val intent = Intent(this@TimetableFilterActivity, TeacherActivity::class.java)
-                    intent.putExtra("currentTeacherId", it.id)
-                    startActivity(intent)
-                }
-            } catch (_: Exception){
-                
-            }
-        }
+
         groupBt.setOnClickListener {
             CoroutineScope(Dispatchers.IO).launch {
                 try {
                     val groups = api.getAllGroups(savedToken.toString())
                     val groupAdapter = TimetableGroupFilterAdapter(groups)
-                    recyclerList.adapter = groupAdapter
-                    groupAdapter.onClickListener = {
-                        val intent = Intent(this@TimetableFilterActivity, TeacherActivity::class.java)
-                        intent.putExtra("currentTeacherId", it.id)
-                        startActivity(intent)
+                    runOnUiThread {
+                        recyclerList.adapter = groupAdapter
+                        groupAdapter.onClickListener = {
+                            val timetableActivity = Intent(this@TimetableFilterActivity, TimetableActivity::class.java)
+                            timetableActivity.putExtra("filterByGroup", true)
+                            timetableActivity.putExtra("filterByTeacher", false)
+                            timetableActivity.putExtra("filterByAuditorium", false)
+                            timetableActivity.putExtra("currentGroupIdFilter", it.id)
+                            startActivity(timetableActivity)
+                        }
                     }
-                } catch (_: Exception){
-
-                }
+                } catch (e: Exception){ }
             }
             teacherBt.setOnClickListener {
                 CoroutineScope(Dispatchers.IO).launch {
                     try {
                         val teachers = api.getAllTeachers(savedToken.toString())
-                        val groupAdapter = TimetableTeacherFilterAdapter(teachers)
-                        recyclerList.adapter = groupAdapter
-                        groupAdapter.onClickListener = {
-                            val intent = Intent(this@TimetableFilterActivity, TeacherActivity::class.java)
-                            intent.putExtra("currentTeacherId", it.id)
-                            startActivity(intent)
+                        runOnUiThread {
+                            val teacherAdapter = TimetableTeacherFilterAdapter(teachers)
+                            recyclerList.adapter = teacherAdapter
+                            teacherAdapter.onClickListener = {
+                                val timetableActivity = Intent(this@TimetableFilterActivity, TimetableActivity::class.java)
+                                timetableActivity.putExtra("filterByGroup", false)
+                                timetableActivity.putExtra("filterByTeacher", true)
+                                timetableActivity.putExtra("filterByAuditorium", false)
+                                timetableActivity.putExtra("currentTeacherIdFilter", it.id)
+                                startActivity(timetableActivity)
+                            }
                         }
-                    } catch (_: Exception){
-
-                    }
+                    } catch (e: Exception){ }
                 }
             }
             auditoriumBt.setOnClickListener {
                 CoroutineScope(Dispatchers.IO).launch {
                     try {
                         val auditoriums = api.getAllAuditoriums(savedToken.toString())
-                        val groupAdapter = TimetableAuditoriumFilterAdapter(auditoriums)
-                        recyclerList.adapter = groupAdapter
-                        groupAdapter.onClickListener = {
-                            val intent = Intent(this@TimetableFilterActivity, TeacherActivity::class.java)
-                            intent.putExtra("currentTeacherId", it.id)
-                            startActivity(intent)
+                        runOnUiThread {
+                            val auditoriumAdapter = TimetableAuditoriumFilterAdapter(auditoriums)
+                            recyclerList.adapter = auditoriumAdapter
+                            auditoriumAdapter.onClickListener = {
+                                val timetableActivity = Intent(this@TimetableFilterActivity, TimetableActivity::class.java)
+                                timetableActivity.putExtra("filterByGroup", false)
+                                timetableActivity.putExtra("filterByTeacher", false)
+                                timetableActivity.putExtra("filterByAuditorium", true)
+                                timetableActivity.putExtra("currentAuditoriumIdFilter", it.id)
+                                startActivity(timetableActivity)
+                            }
                         }
-                    } catch (_: Exception){
-
-                    }
+                    } catch (e: Exception){ }
                 }
             }
         }
+        groupBt.callOnClick()
     }
 }
