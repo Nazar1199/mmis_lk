@@ -31,4 +31,15 @@ interface mmisApi {
     @GET("timetable")
     suspend fun getAllTimetables(@Header("Authorization") token: String): Array<TimeTable>
 
+    @GET("timetable/group/{id}")
+    suspend fun getTimetableByGroup(@Header("Authorization") token: String, @Path("id") groupId: Int): Array<TimeTable>
+
+    @GET("timetable/teacher/{id}")
+    suspend fun getTimetableByTeacher(@Header("Authorization") token: String, @Path("id") teacherId: Int): Array<TimeTable>
+
+    @GET("timetable/auditorium/{id}")
+    suspend fun getTimetableByAuditorium(@Header("Authorization") token: String, @Path("id") auditoriumId: Int): Array<TimeTable>
+
+    @GET("group")
+    suspend fun getAllGroups(@Header("Authorization") token: String): Array<Group>
 }
