@@ -35,5 +35,8 @@
         <activity
             android:name=".TimetableActivity"
             android:label="@string/time_table" />
+        <activity
+            android:name=".TimetableFilterActivity"
+            android:label="@string/time_table" />
     </application>
 </manifest>

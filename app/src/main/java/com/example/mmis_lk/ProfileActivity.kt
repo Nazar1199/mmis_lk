@@ -76,8 +76,8 @@ class ProfileActivity : AppCompatActivity() {
             startActivity(teacherListActivity)
         }
         toTimetable.setOnClickListener {
-            val timetableActivity = Intent(this, TimetableActivity::class.java)
-            startActivity(timetableActivity)
+            val timetableFilterActivity = Intent(this, TimetableFilterActivity::class.java)
+            startActivity(timetableFilterActivity)
         }
     }
 }
