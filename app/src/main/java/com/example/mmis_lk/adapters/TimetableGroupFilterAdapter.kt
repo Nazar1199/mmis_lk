@@ -18,7 +18,7 @@ class TimetableGroupFilterAdapter(private val dataSet: Array<Group>) :
      */
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         // Define click listener for the ViewHolder's View
-        val teacherName: Button = view.findViewById(R.id.buttonTitle)
+        val title: Button = view.findViewById(R.id.buttonTitle)
     }
 
     // Create new views (invoked by the layout manager)
@@ -33,8 +33,8 @@ class TimetableGroupFilterAdapter(private val dataSet: Array<Group>) :
     override fun onBindViewHolder(viewHolder: ViewHolder, position: Int) {
         // Get element from your dataset at this position and replace the
         // contents of the view with that element
-        viewHolder.teacherName.text = dataSet[position].name
-        viewHolder.itemView.setOnClickListener {
+        viewHolder.title.text = dataSet[position].name
+        viewHolder.title.setOnClickListener {
             onClickListener?.invoke(dataSet[position])
         }
     }
