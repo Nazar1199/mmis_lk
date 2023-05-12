@@ -43,6 +43,9 @@ class LoginActivity : AppCompatActivity() {
                                 var editor = sharedPref.edit()
                                 editor.putString("token", authToken.token)
                                 editor.commit()
+                                if (sharedPref.getString("token", "") != ""){
+                                    startActivity(profileActivity)
+                                }
                                 messagesView.text = getString(R.string.login_success)
                             }
                         }
