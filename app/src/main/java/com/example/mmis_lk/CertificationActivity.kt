@@ -4,6 +4,7 @@ import android.annotation.SuppressLint
 import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.mmis_lk.adapters.SemCertificationAdapter
@@ -31,7 +32,6 @@ class CertificationActivity : AppCompatActivity() {
             try {
                 var certifications = api.getMyCertifications(savedToken.toString())
 
-                certifications.sortBy { it.periodSem }
                 var sortingCertifications: MutableList<Array<Certification>> = arrayListOf()
                 var sortingCertificationsForSem: MutableList<Certification> = arrayListOf()
                 if (certifications.isNotEmpty()){
