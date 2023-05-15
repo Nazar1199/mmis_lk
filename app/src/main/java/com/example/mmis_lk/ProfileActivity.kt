@@ -27,8 +27,9 @@ class ProfileActivity : AppCompatActivity() {
         val name = findViewById<TextView>(R.id.textViewName)
         val logOutBt = findViewById<Button>(R.id.buttonLogout)
         val myRefsBt = findViewById<Button>(R.id.buttonMyReferences)
-        val toTimetable = findViewById<Button>(R.id.buttonToTimetable)
+        val toTimetableBt = findViewById<Button>(R.id.buttonToTimetable)
         val toTeachersBt = findViewById<Button>(R.id.buttonToTeachersList)
+        val toCertificationsBt = findViewById<Button>(R.id.buttonToCertifications)
         val avatar = findViewById<ImageView>(R.id.imageViewAvatar)
 
         val sharedPref = getSharedPreferences("myPrefs", Context.MODE_PRIVATE)
@@ -75,9 +76,13 @@ class ProfileActivity : AppCompatActivity() {
             val teacherListActivity = Intent(this, TeacherListActivity::class.java)
             startActivity(teacherListActivity)
         }
-        toTimetable.setOnClickListener {
+        toTimetableBt.setOnClickListener {
             val timetableActivity = Intent(this, TimetableFilterActivity::class.java)
             startActivity(timetableActivity)
+        }
+        toCertificationsBt.setOnClickListener {
+            val certificationsActivity = Intent(this, CertificationActivity::class.java)
+            startActivity(certificationsActivity)
         }
     }
 }
