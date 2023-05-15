@@ -8,8 +8,6 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.mmis_lk.R
 import com.example.mmis_lk.retrofit.models.Certification
-import com.example.mmis_lk.retrofit.models.TimeTable
-import java.util.*
 
 class SemCertificationAdapter(private val dataSet: Array<Array<Certification>>) :
     RecyclerView.Adapter<SemCertificationAdapter.ViewHolder>() {
