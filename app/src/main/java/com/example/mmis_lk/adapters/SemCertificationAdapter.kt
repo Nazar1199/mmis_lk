@@ -37,7 +37,7 @@ class SemCertificationAdapter(private val dataSet: Array<Array<Certification>>) 
         viewHolder.semesterBT.text = "Семестр " + dataSet[position][0].periodSem
         viewHolder.semesterRecyclerView.layoutManager = LinearLayoutManager(viewHolder.semesterRecyclerView.context  , LinearLayoutManager.VERTICAL, false)
         dataSet[position].sortBy { it.typeControl.id }
-        dataSet.reverse()
+        dataSet[position].reverse()
         viewHolder.semesterRecyclerView.adapter = CertificationAdapter(dataSet[position])
     }
 
