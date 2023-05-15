@@ -1,7 +1,9 @@
 package com.example.mmis_lk.retrofit.models
 
+import java.util.Date
+
 data class Certification(
-    val dateTime: String,
+    val dateTime: Date,
     val discipline: Discipline,
     val id: Int,
     val mark: Int,
