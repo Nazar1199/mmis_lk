@@ -35,15 +35,15 @@ class CertificationActivity : AppCompatActivity() {
                 var sortingCertifications: MutableList<Array<Certification>> = arrayListOf()
                 var sortingCertificationsForSem: MutableList<Certification> = arrayListOf()
                 if (certifications.isNotEmpty()){
-                    var startDate = certifications[0].periodSem
+                    var currentSemester = certifications[0].periodSem
                     certifications.forEach {
-                        if (it.periodSem == startDate){
+                        if (it.periodSem == currentSemester){
                             sortingCertificationsForSem.add(it)
                         } else {
                             sortingCertifications.add(sortingCertificationsForSem.toTypedArray())
                             sortingCertificationsForSem = arrayListOf()
                             sortingCertificationsForSem.add(it)
-                            startDate = it.periodSem
+                            currentSemester = it.periodSem
                         }
                     }
                     sortingCertifications.add(sortingCertificationsForSem.toTypedArray())
