@@ -33,7 +33,7 @@
     <string name="auditorium_sample" translatable="false">2165</string>
     <string name="lesson_time_start_end" translatable="false">10:20 11:50</string>
     <string name="lesson_type_aud" translatable="false">ПР 2165</string>
-    <string name="discipline_name_sample" translatable="false">Информационные системы в области образования</string>
+    <string name="discipline_name_sample" translatable="false">Теория вероятностей</string>
     <string name="teacher_name_sample" translatable="false">Мальцев Игорь Михайлович</string>
     <string name="friday">Friday</string>
     <string name="moonday">Moonday</string>
@@ -43,4 +43,6 @@
     <string name="saturday">Saturday</string>
     <string name="sunday">Sunday</string>
     <string name="auditorium">Auditorium</string>
+    <string name="hours_sample" translatable="false">144</string>
+    <string name="midterm_mark">Midterm</string>
 </resources>

@@ -34,4 +34,5 @@
     <string name="saturday">Saturday</string>
     <string name="sunday">Sunday</string>
     <string name="auditorium">Auditorium</string>
+    <string name="midterm_mark">Midterm</string>
 </resources>
