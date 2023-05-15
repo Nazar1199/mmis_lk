@@ -56,7 +56,7 @@ class CertificationAdapter(private val dataSet: Array<Certification>) :
                 viewHolder.markName.text = "Зачет"
             }
         }
-        viewHolder.hours.text = dateFormater.format(dataSet[position].numberOfHours)
+        viewHolder.hours.text = dateFormater.format(dataSet[position].numberOfHours) + " ч."
         viewHolder.markDate.text = dataSet[position].dateTime
         viewHolder.teacher.text =
                 dataSet[position].teacher.lastName + " " +
