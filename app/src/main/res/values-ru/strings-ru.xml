@@ -35,4 +35,7 @@
     <string name="sunday">Воскресенье</string>
     <string name="auditorium">Аудитория</string>
     <string name="midterm_mark">Зачет</string>
+    <string name="semestr">Семестр</string>
+    <string name="semestr_sample">Семестр 4</string>
+    <string name="digital_report_card">Электронная зачетная книжка</string>
 </resources>

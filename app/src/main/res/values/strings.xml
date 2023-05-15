@@ -45,4 +45,7 @@
     <string name="auditorium">Auditorium</string>
     <string name="hours_sample" translatable="false">144</string>
     <string name="midterm_mark">Midterm</string>
+    <string name="semestr">Semestr</string>
+    <string name="semestr_sample">Semestr 4</string>
+    <string name="digital_report_card">Digital report card</string>
 </resources>

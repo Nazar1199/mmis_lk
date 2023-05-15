@@ -35,4 +35,7 @@
     <string name="sunday">Sunday</string>
     <string name="auditorium">Auditorium</string>
     <string name="midterm_mark">Midterm</string>
+    <string name="semestr">Semestr</string>
+    <string name="semestr_sample">Semestr 4</string>
+    <string name="digital_report_card">Digital report card</string>
 </resources>
