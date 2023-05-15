@@ -6,7 +6,7 @@
     android:layout_height="wrap_content">
 
     <Button
-        android:id="@+id/buttonDate"
+        android:id="@+id/buttonSemester"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -21,7 +21,7 @@
         android:id="@+id/semesterRecyclerView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="@id/buttonDate"
-        app:layout_constraintTop_toBottomOf="@id/buttonDate"
+        app:layout_constraintStart_toStartOf="@id/buttonSemester"
+        app:layout_constraintTop_toBottomOf="@id/buttonSemester"
         tools:listitem="@layout/item_certification" />
 </androidx.constraintlayout.widget.ConstraintLayout>
