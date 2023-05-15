@@ -42,4 +42,7 @@ interface mmisApi {
 
     @GET("group")
     suspend fun getAllGroups(@Header("Authorization") token: String): Array<Group>
+
+    @GET("certification/me")
+    suspend fun getMyCertifications(@Header("Authorization") token: String): Array<Certification>
 }
