@@ -4,7 +4,6 @@ import android.annotation.SuppressLint
 import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.mmis_lk.adapters.DayTimetableAdapter
@@ -60,8 +59,8 @@ class TimetableActivity : AppCompatActivity() {
                         }
                     }
                     sortingTimetables.add(sortingTimetablesForDay.toTypedArray())
-                    val arr: Array<Array<TimeTable>> = sortingTimetables.toTypedArray()
-                    runOnUiThread { recyclerList.adapter = DayTimetableAdapter(arr) }
+                    val sortedTimetables: Array<Array<TimeTable>> = sortingTimetables.toTypedArray()
+                    runOnUiThread { recyclerList.adapter = DayTimetableAdapter(sortedTimetables) }
                 }
             } catch (error: Exception){
 
