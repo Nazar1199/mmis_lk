@@ -39,7 +39,7 @@ class CertificationAdapter(private val dataSet: Array<Certification>) :
 
         // Get element from your dataset at this position and replace the
         // contents of the view with that element
-        var dateFormater: SimpleDateFormat = SimpleDateFormat("dd.MM.yy")
+        var dateFormater: SimpleDateFormat = SimpleDateFormat("dd.MM.yyyy")
         viewHolder.disciplineName.text = dataSet[position].discipline.name
         if (dataSet[position].mark == 1 || dataSet[position].mark == 2) {
             viewHolder.markName.text = "Неуд"
