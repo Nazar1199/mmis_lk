@@ -8,5 +8,6 @@ data class Certification(
     val numberOfHours: Int,
     val periodSem: Int,
     val student: Student,
-    val teacher: Teacher
+    val teacher: Teacher,
+    val typeControl: TypeControl
 )
