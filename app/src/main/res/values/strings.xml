@@ -48,4 +48,6 @@
     <string name="semestr">Semestr</string>
     <string name="semestr_sample">Semestr 4</string>
     <string name="digital_report_card">Digital report card</string>
+    <string name="ordering_reference">Ordering reference</string>
+    <string name="select_reference">Select reference</string>
 </resources>

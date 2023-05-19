@@ -38,4 +38,6 @@
     <string name="semestr">Семестр</string>
     <string name="semestr_sample">Семестр 4</string>
     <string name="digital_report_card">Электронная зачетная книжка</string>
+    <string name="ordering_reference">Заказ справки</string>
+    <string name="select_reference">Выбор справки</string>
 </resources>
